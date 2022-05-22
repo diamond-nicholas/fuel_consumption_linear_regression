@@ -2,6 +2,7 @@ import matplotlib.pyplot as plt
 import pandas as pd
 import pylab as pl
 import numpy as np
+from sklearn import linear_model
 # %matplotlib inline
 
 !wget "https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBMDeveloperSkillsNetwork-ML0101EN-SkillsNetwork/labs/Module%202/data/FuelConsumptionCo2.csv"
@@ -51,3 +52,14 @@ plt.scatter(train.ENGINESIZE, train.CO2EMISSIONS,  color='blue')
 plt.xlabel("Engine size")
 plt.ylabel("Emission")
 plt.show()
+
+# apply linear regression to get the coefficient and intercept
+regr = linear_model.LinearRegression()
+train_x = np.asanyarray(train[['ENGINESIZE']])
+
+train_y = np.asanyarray(train[['CO2EMISSIONS']])
+regr.fit(train_x, train_y)
+# The coefficients
+print ('Coefficients: ', regr.coef_)
+print ('Intercept: ',regr.intercept_)
+# print('train_x:' ,train_x[0][0])
