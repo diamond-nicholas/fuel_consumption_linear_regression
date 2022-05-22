@@ -40,3 +40,8 @@ plt.scatter(cdf.CYLINDERS, cdf.CO2EMISSIONS,  color='blue')
 plt.xlabel("Cylinders")
 plt.ylabel("Emission")
 plt.show()
+
+# split data 80% for train and 20% for test
+msk = np.random.rand(len(data)) < 0.8
+train = cdf[msk]
+test = cdf[~msk]
