@@ -45,3 +45,9 @@ plt.show()
 msk = np.random.rand(len(data)) < 0.8
 train = cdf[msk]
 test = cdf[~msk]
+
+# scatter plot of train dataset (enginesize vs emisson)
+plt.scatter(train.ENGINESIZE, train.CO2EMISSIONS,  color='blue')
+plt.xlabel("Engine size")
+plt.ylabel("Emission")
+plt.show()
