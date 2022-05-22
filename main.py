@@ -28,3 +28,9 @@ plt.scatter(cdf.FUELCONSUMPTION_COMB, cdf.CO2EMISSIONS,  color='blue')
 plt.xlabel("FUELCONSUMPTION_COMB")
 plt.ylabel("Emission")
 plt.show()
+
+# scatter plot enginesize vs emission
+plt.scatter(cdf.ENGINESIZE, cdf.CO2EMISSIONS,  color='blue')
+plt.xlabel("Engine size")
+plt.ylabel("Emission")
+plt.show()
