@@ -3,6 +3,7 @@ import pandas as pd
 import pylab as pl
 import numpy as np
 from sklearn import linear_model
+from sklearn.metrics import r2_score
 # %matplotlib inline
 
 !wget "https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBMDeveloperSkillsNetwork-ML0101EN-SkillsNetwork/labs/Module%202/data/FuelConsumptionCo2.csv"
@@ -63,3 +64,9 @@ regr.fit(train_x, train_y)
 print ('Coefficients: ', regr.coef_)
 print ('Intercept: ',regr.intercept_)
 # print('train_x:' ,train_x[0][0])
+
+# plot and set label
+plt.scatter(train.ENGINESIZE, train.CO2EMISSIONS,  color='blue')
+plt.plot(train_x, regr.coef_[0][0]*train_x + regr.intercept_[0], '-r')
+plt.xlabel("Engine size")
+plt.ylabel("Emission")
