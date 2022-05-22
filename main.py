@@ -34,3 +34,9 @@ plt.scatter(cdf.ENGINESIZE, cdf.CO2EMISSIONS,  color='blue')
 plt.xlabel("Engine size")
 plt.ylabel("Emission")
 plt.show()
+
+# scatter plot of cylinder vs emission
+plt.scatter(cdf.CYLINDERS, cdf.CO2EMISSIONS,  color='blue')
+plt.xlabel("Cylinders")
+plt.ylabel("Emission")
+plt.show()
