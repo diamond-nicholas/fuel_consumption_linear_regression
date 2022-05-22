@@ -8,4 +8,14 @@ import numpy as np
 
 # read data
 data = pd.read_csv("FuelConsumptionCo2.csv")
+
+
+# visualize data
 data.head()
+data.describe()
+data.hist()
+data.shape
+
+viz = cdf[['CYLINDERS','ENGINESIZE','CO2EMISSIONS','FUELCONSUMPTION_COMB']]
+viz.hist()
+plt.show()
